@@ -1,8 +1,8 @@
 package main
 
 func sequentialSearchJudul(judul string) int {
-	for i, film := range daftarFilm {
-		if film.judul == judul {
+	for i := 0; i < jumlahFilm; i++ {
+		if daftarFilm[i].judul == judul {
 			return i
 		}
 	}
@@ -10,20 +10,20 @@ func sequentialSearchJudul(judul string) int {
 }
 
 func binarySearchJudul(judul string) int {
-	if len(daftarFilm) == 0 {
+	if jumlahFilm == 0 {
 		return -1
 	}
 
-	type idxJudul struct {
+	type item struct {
 		idx   int
 		judul string
 	}
-	temp := make([]idxJudul, len(daftarFilm))
-	for i, f := range daftarFilm {
-		temp[i] = idxJudul{idx: i, judul: f.judul}
+	temp := make([]item, jumlahFilm)
+	for i := 0; i < jumlahFilm; i++ {
+		temp[i] = item{idx: i, judul: daftarFilm[i].judul}
 	}
 
-	for i := 1; i < len(temp); i++ {
+	for i := 1; i < jumlahFilm; i++ {
 		key := temp[i]
 		j := i - 1
 		for j >= 0 && temp[j].judul > key.judul {
@@ -33,7 +33,7 @@ func binarySearchJudul(judul string) int {
 		temp[j+1] = key
 	}
 
-	low, high := 0, len(temp)-1
+	low, high := 0, jumlahFilm-1
 	for low <= high {
 		mid := (low + high) / 2
 		if temp[mid].judul == judul {
