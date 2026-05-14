@@ -9,8 +9,8 @@ func main() {
 	fmt.Println("| 2. Tampilkan Film     |")
 	fmt.Println("| 3. Urutkan Rating     |")
 	fmt.Println("| 4. Urutkan Judul      |")
-	fmt.Println("| 5. Cari Film          |")
-	fmt.Println("| 6. Statistik Film     |")
+	fmt.Println("| 5. Statistik Film     |")
+	fmt.Println("| 6. Cari Film          |")
 	fmt.Println("|=======================|")
 	fmt.Print("Pilih: ")
 	fmt.Scan(&pilihan)
@@ -27,11 +27,14 @@ func main() {
 		insertionSortJudul()
 		tampilFilm()
 	case 5:
+		tampilFilm()
 		statistikFilm()
 	case 6:
 		var cari string
+
 		fmt.Print("Masukkan judul film: ")
 		fmt.Scan(&cari)
+
 		idx := sequentialSearchJudul(cari)
 		if idx == -1 {
 			fmt.Println("Film tidak ditemukan.")
