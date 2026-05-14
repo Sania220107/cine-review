@@ -12,10 +12,12 @@ func main() {
 		fmt.Println("=================================")
 		fmt.Println("1. Tambah Film")
 		fmt.Println("2. Tampilkan Film")
-		fmt.Println("3. Urutkan Rating")
-		fmt.Println("4. Urutkan Judul")
-		fmt.Println("5. Statistik Film")
-		fmt.Println("6. Cari Film")
+		fmt.Println("3. Edit Film")
+		fmt.Println("4. Hapus Film")
+		fmt.Println("5. Urutkan Rating")
+		fmt.Println("6. Urutkan Judul")
+		fmt.Println("7. Statistik Film")
+		fmt.Println("8. Cari Film")
 		fmt.Println("0. Keluar")
 		fmt.Println("=================================")
 
@@ -31,20 +33,26 @@ func main() {
 			tampilFilm()
 
 		case 3:
+			editFilm()
+
+		case 4:
+			hapusFilm()
+
+		case 5:
 			selectionSortRating()
 			fmt.Println("\nFilm berhasil diurutkan berdasarkan rating!")
 			tampilFilm()
 
-		case 4:
+		case 6:
 			insertionSortJudul()
 			fmt.Println("\nFilm berhasil diurutkan berdasarkan judul!")
 			tampilFilm()
 
-		case 5:
+		case 7:
 			tampilFilm()
 			statistikFilm()
 
-		case 6:
+		case 8:
 			var cari string
 
 			fmt.Print("Masukkan judul film: ")
