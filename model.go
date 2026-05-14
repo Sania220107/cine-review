@@ -8,5 +8,4 @@ type Film struct {
 	deskripsi  string
 }
 
-var daftarFilm [100]Film
-var jumlahFilm int
+var daftarFilm []Film
