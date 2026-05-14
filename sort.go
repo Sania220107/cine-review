@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package main
 import "fmt"
 
@@ -41,3 +42,5 @@ func insertionSortJudul() {
 	}
 	fmt.Println("Berhasil mengurutkan film berdasarkan judul.")
 }
+=======
+>>>>>>> 0344fc4 (fitur crud)
