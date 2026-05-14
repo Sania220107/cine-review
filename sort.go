@@ -16,7 +16,6 @@ func selectionSortRating() {
 				idxMax = j
 			}
 		}
-
 		daftarFilm[i], daftarFilm[idxMax] = daftarFilm[idxMax], daftarFilm[i]
 	}
 }
