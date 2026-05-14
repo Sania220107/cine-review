@@ -5,6 +5,7 @@ import (
 )
 
 func statistikFilm() {
+
 	if jumlahFilm == 0 {
 		fmt.Println("Tidak ada data film.")
 		return
@@ -20,6 +21,7 @@ func statistikFilm() {
 
 	fmt.Println("\n=== STATISTIK FILM ===")
 	fmt.Println("Jumlah film per genre:")
+
 	for genre, count := range genreCount {
 		fmt.Printf("  %-15s : %d film\n", genre, count)
 	}

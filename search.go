@@ -18,6 +18,7 @@ func binarySearchJudul(judul string) int {
 		idx   int
 		judul string
 	}
+
 	temp := make([]item, jumlahFilm)
 	for i := 0; i < jumlahFilm; i++ {
 		temp[i] = item{idx: i, judul: daftarFilm[i].judul}
