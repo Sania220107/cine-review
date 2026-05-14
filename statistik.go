@@ -6,7 +6,7 @@ import (
 
 func statistikFilm() {
 
-	if jumlahFilm == 0 {
+	if len(daftarFilm) == 0 {
 		fmt.Println("Tidak ada data film.")
 		return
 	}
@@ -14,7 +14,7 @@ func statistikFilm() {
 	genreCount := make(map[string]int)
 	var totalRating float64 = 0.0
 
-	for i := 0; i < jumlahFilm; i++ {
+	for i := 0; i < len(daftarFilm); i++ {
 		genreCount[daftarFilm[i].genre]++
 		totalRating += daftarFilm[i].rating
 	}
@@ -26,6 +26,7 @@ func statistikFilm() {
 		fmt.Printf("  %-15s : %d film\n", genre, count)
 	}
 
-	averageRating := totalRating / float64(jumlahFilm)
+	averageRating := totalRating / float64(len(daftarFilm))
+
 	fmt.Printf("\nRata-rata rating seluruh koleksi : %.2f\n", averageRating)
 }
