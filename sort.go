@@ -1,43 +1,41 @@
 package main
+
 import "fmt"
 
-// mengurutkan rating dari tertinggi
 func selectionSortRating() {
-	if jumlahFilm == 0 {
-		fmt.Print("Daftar Film Kosong")
+	n := len(daftarFilm)
+	if n == 0 {
+		fmt.Println("Daftar film kosong, tidak ada yang bisa diurutkan.")
 		return
 	}
 
-	for i := 0; i < jumlahFilm - 1; i++ {
+	for i := 0; i < n-1; i++ {
 		idxMax := i
-		for j := i + 1; j < jumlahFilm; j++ {
+		for j := i + 1; j < n; j++ {
 			if daftarFilm[j].rating > daftarFilm[idxMax].rating {
 				idxMax = j
 			}
 		}
-		temp := daftarFilm[idxMax]
-		daftarFilm[idxMax] = daftarFilm[i]
-		daftarFilm[i] = temp
+
+		daftarFilm[i], daftarFilm[idxMax] = daftarFilm[idxMax], daftarFilm[i]
 	}
-	fmt.Println("Berhasil mengurutkan film berdasarkan rating  tertinggi")
 }
 
-// mengurutkan judul sesuai abjad
 func insertionSortJudul() {
-	if jumlahFilm == 0 {
-		fmt.Println("Daftar film kosong.")
+	n := len(daftarFilm)
+	if n == 0 {
+		fmt.Println("Daftar film kosong, tidak ada yang bisa diurutkan.")
 		return
 	}
-	for i := 1; i < jumlahFilm; i++ {
+
+	for i := 1; i < n; i++ {
 		key := daftarFilm[i]
 		j := i - 1
 
-		// Geser elemen yang lebih besar dari key ke kanan
 		for j >= 0 && daftarFilm[j].judul > key.judul {
 			daftarFilm[j+1] = daftarFilm[j]
 			j--
 		}
 		daftarFilm[j+1] = key
 	}
-	fmt.Println("Berhasil mengurutkan film berdasarkan judul.")
 }
