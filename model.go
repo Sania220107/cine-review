@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 package main
 
 type Film struct {
@@ -11,4 +9,3 @@ type Film struct {
 }
 
 var daftarFilm []Film
->>>>>>> 1a38038c9325793ea27e3f4f6d4de483999d44e4

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 package main
 
 import "fmt"
@@ -69,4 +67,3 @@ func main() {
 		}
 	}
 }
->>>>>>> 1a38038c9325793ea27e3f4f6d4de483999d44e4

@@ -1,39 +1,6 @@
-<<<<<<< HEAD
-=======
 package main
 
 import "fmt"
-
-<<<<<<< HEAD
-func tambahFilm() {
-	if jumlahFilm < 100 {
-		var f Film
-		fmt.Print("Judul: ")
-		fmt.Scan(&f.judul)
-		fmt.Print("Genre: ")
-		fmt.Scan(&f.genre)
-		fmt.Print("Tahun: ")
-		fmt.Scan(&f.tahun)
-		fmt.Print("Rating (0.0 - 10.0): ")
-		fmt.Scan(&f.rating)
-		fmt.Print("Deskripsi: ")
-		fmt.Scan(&f.deskripsi)
-
-		daftarFilm[jumlahFilm] = f
-		jumlahFilm++
-		fmt.Println("Film berhasil ditambahkan!")
-	} else {
-		fmt.Println("Kapasitas penuh!")
-	}
-}
-
-func tampilFilm() {
-	fmt.Println("\n--- Daftar Film ---")
-	for i := 0; i < jumlahFilm; i++ {
-		f := daftarFilm[i]
-		fmt.Printf("%d. [%s] Genre: %s, Tahun: %d, Rating: %.1f\n", i+1, f.judul, f.genre, f.tahun, f.rating)
-	}
-=======
 
 func tambahFilm() {
 	var film Film
@@ -60,8 +27,8 @@ func tambahFilm() {
 	fmt.Println("\nFilm berhasil ditambahkan!")
 }
 
-
 func tampilFilm() {
+
 	fmt.Println("\n=== DAFTAR FILM ===")
 
 	if len(daftarFilm) == 0 {
@@ -70,6 +37,7 @@ func tampilFilm() {
 	}
 
 	for i, film := range daftarFilm {
+
 		fmt.Printf("\nFilm ke-%d\n", i+1)
 		fmt.Println("Judul     :", film.judul)
 		fmt.Println("Genre     :", film.genre)
@@ -79,8 +47,8 @@ func tampilFilm() {
 	}
 }
 
-
 func editFilm() {
+
 	var index int
 
 	fmt.Println("\n=== EDIT FILM ===")
@@ -120,8 +88,8 @@ func editFilm() {
 	fmt.Println("\nFilm berhasil diedit!")
 }
 
-
 func hapusFilm() {
+
 	var index int
 
 	fmt.Println("\n=== HAPUS FILM ===")
@@ -146,6 +114,4 @@ func hapusFilm() {
 	daftarFilm = append(daftarFilm[:index], daftarFilm[index+1:]...)
 
 	fmt.Println("\nFilm berhasil dihapus!")
->>>>>>> 0344fc4 (fitur crud)
 }
->>>>>>> 1a38038c9325793ea27e3f4f6d4de483999d44e4
