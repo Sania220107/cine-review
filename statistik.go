@@ -1,20 +1,19 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
 func statistikFilm() {
 
 	if len(daftarFilm) == 0 {
-		fmt.Println("Tidak ada data film.")
+		fmt.Println("\nTidak ada data film.")
 		return
 	}
 
 	genreCount := make(map[string]int)
-	var totalRating float64 = 0.0
+	var totalRating float64
 
 	for i := 0; i < len(daftarFilm); i++ {
+
 		genreCount[daftarFilm[i].genre]++
 		totalRating += daftarFilm[i].rating
 	}
@@ -22,11 +21,11 @@ func statistikFilm() {
 	fmt.Println("\n=== STATISTIK FILM ===")
 	fmt.Println("Jumlah film per genre:")
 
-	for genre, count := range genreCount {
-		fmt.Printf("  %-15s : %d film\n", genre, count)
+	for genre, jumlah := range genreCount {
+		fmt.Printf("%s : %d film\n", genre, jumlah)
 	}
 
-	averageRating := totalRating / float64(len(daftarFilm))
+	rataRata := totalRating / float64(len(daftarFilm))
 
-	fmt.Printf("\nRata-rata rating seluruh koleksi : %.2f\n", averageRating)
+	fmt.Printf("\nRata-rata rating seluruh koleksi : %.2f\n", rataRata)
 }
