@@ -13,9 +13,9 @@ func main() {
 
 	for {
 
-		fmt.Println("\n+++++++++++++++++++++++++++++")
-		fmt.Println("+++      CINE REVIEW     +++")
-		fmt.Println("+++++++++++++++++++++++++++++")
+		fmt.Println("\n============================")
+		fmt.Println("===      CINE REVIEW     ===")
+		fmt.Println("============================")
 		fmt.Println("1. Tambah Film")
 		fmt.Println("2. Tampilkan Film")
 		fmt.Println("3. Edit Film")
@@ -26,7 +26,7 @@ func main() {
 		fmt.Println("8. Cari Film Sequential")
 		fmt.Println("9. Cari Film Binary")
 		fmt.Println("0. Keluar")
-		fmt.Println("+++++++++++++++++++++++++++++")
+		fmt.Println("============================")
 
 		fmt.Print("Pilih menu: ")
 		fmt.Scan(&pilihan)
