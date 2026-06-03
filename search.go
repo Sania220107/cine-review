@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func sequentialSearchJudul(judul string) int {
 
 	for i := 0; i < len(daftarFilm); i++ {
@@ -10,6 +12,32 @@ func sequentialSearchJudul(judul string) int {
 	}
 
 	return -1
+}
+
+func sequentialSearchGenre(genre string) {
+
+	found := false
+
+	fmt.Println("\n=== HASIL PENCARIAN GENRE ===")
+
+	for i := 0; i < len(daftarFilm); i++ {
+
+		if daftarFilm[i].genre == genre {
+
+			fmt.Printf("\nFilm ke-%d\n", i+1)
+			fmt.Println("Judul     :", daftarFilm[i].judul)
+			fmt.Println("Genre     :", daftarFilm[i].genre)
+			fmt.Println("Tahun     :", daftarFilm[i].tahun)
+			fmt.Println("Rating    :", daftarFilm[i].rating)
+			fmt.Println("Deskripsi :", daftarFilm[i].deskripsi)
+
+			found = true
+		}
+	}
+
+	if !found {
+		fmt.Println("Film dengan genre tersebut tidak ditemukan.")
+	}
 }
 
 func binarySearchJudul(judul string) int {
@@ -26,6 +54,7 @@ func binarySearchJudul(judul string) int {
 	temp := make([]item, len(daftarFilm))
 
 	for i := 0; i < len(daftarFilm); i++ {
+
 		temp[i] = item{
 			idx:   i,
 			judul: daftarFilm[i].judul,
@@ -54,10 +83,8 @@ func binarySearchJudul(judul string) int {
 
 		if temp[mid].judul == judul {
 			return temp[mid].idx
-
 		} else if temp[mid].judul < judul {
 			low = mid + 1
-
 		} else {
 			high = mid - 1
 		}
